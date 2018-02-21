@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.com.sample.service</groupId>
-	<artifactId>clean-architecture-service</artifactId>
+	<artifactId>jam-clean-architecture-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	 
@@ -38,6 +38,11 @@
         <dependency>
             <groupId>org.com.sample.presentation</groupId>
             <artifactId>jam-clean-architecture-presentation</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.com.sample.repositories</groupId>
+            <artifactId>jam-clean-architecture-repositories</artifactId>
             <version>${project.version}</version>
         </dependency>
 	</dependencies>

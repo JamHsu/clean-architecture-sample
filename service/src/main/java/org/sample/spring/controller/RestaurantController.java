@@ -1,15 +1,15 @@
-package spring.service;
+package org.sample.spring.controller;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 @Service
 @EnableConfigurationProperties(ServiceProperties.class)
-public class MyService {
+public class RestaurantController {
 
     private final ServiceProperties serviceProperties;
 
-    public MyService(ServiceProperties serviceProperties) {
+    public RestaurantController(ServiceProperties serviceProperties) {
         this.serviceProperties = serviceProperties;
     }
 

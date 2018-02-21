@@ -1,4 +1,4 @@
-package spring.service;
+package org.sample.spring.controller;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
