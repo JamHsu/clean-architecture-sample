@@ -30,7 +30,7 @@ public class RestaurantController {
     public String home() {
         ListRestaurantPresenter presenter = new ListRestaurantPresenter();
         service.listRestaurant(presenter);
-        return null;
+        return presenter.createView().exportJson();
     }
 
 }

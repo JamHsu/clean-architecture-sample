@@ -8,16 +8,26 @@
 
 package org.sample.presentation;
 
+import com.google.gson.Gson;
+
 /**
  * @author jam.hsu
  *
  */
-public class JsonView implements View<JsonModel> {
-
+public class JsonView<M> implements View<JsonModel<M>> {
+	
+	private JsonModel<M> model;
+	
     @Override
-    public View<JsonModel> setViewModel(JsonModel viewModel) {
-        // TODO Auto-generated method stub
-        return null;
+    public View<JsonModel<M>> setViewModel(JsonModel<M> model) {
+    		this.model = model;
+    		return this;
+    }
+    
+    public String exportJson() {
+    		Gson gson = new Gson();
+    		String json = gson.toJson(model);
+    		return json;
     }
 
 }

@@ -10,20 +10,30 @@ package org.sample.presentation.restaurant.list;
 
 import java.util.List;
 
-import org.sample.entities.restaurant.Restaurant;
+import org.sample.presentation.JsonModel;
 import org.sample.presentation.Presenter;
 import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponse;
+import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponseModel.Restaurant;
 
 /**
  * @author jam.hsu
  *
  */
 public class ListRestaurantPresenter implements Presenter<ListRestaurantView>, ListRestaurantResponse {
+	
+	private JsonModel<List<Restaurant>> dataModel;
 
     @Override
     public ListRestaurantView createView() {
-        // TODO Auto-generated method stub
-        return null;
+    		ListRestaurantView view = new ListRestaurantView();
+    		view.setViewModel(dataModel);
+        return view;
+    }
+    
+    private JsonModel<List<Restaurant>> asJsonModel(List<Restaurant> listRestaurant) {
+    		JsonModel<List<Restaurant>> model = new JsonModel<List<Restaurant>>();
+    		model.setData(listRestaurant);
+    		return model;
     }
 
     /* (non-Javadoc)
@@ -31,8 +41,7 @@ public class ListRestaurantPresenter implements Presenter<ListRestaurantView>, L
      */
     @Override
     public void response(List<Restaurant> listRestaurant) {
-        // TODO Auto-generated method stub
-        
+        this.dataModel = asJsonModel(listRestaurant);
     }
 
 }

@@ -24,6 +24,7 @@ import org.sample.repositories.restaurant.contracts.RestaurantRepository;
 import org.sample.usecases.restaurant.list.ListRestaurantImp;
 import org.sample.usecases.restaurant.list.contracts.ListRestaurantRequest;
 import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponse;
+import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponseModel;
 
 /**
  * @author jam.hsu
@@ -46,10 +47,11 @@ class ListRestaurantImpTest {
         ListRestaurantRequest request = new ListRestaurantRequest();
         usecase.execute(request, new ListRestaurantResponse() {
 
-            @Override
-            public void response(List<Restaurant> listRestaurant) {
-                assertEquals(1, listRestaurant.size());
-            }
+			@Override
+			public void response(
+					List<ListRestaurantResponseModel.Restaurant> listRestaurant) {
+				assertEquals(1, listRestaurant.size());
+			}
             
         });
     }

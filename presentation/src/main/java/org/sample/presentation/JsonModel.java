@@ -12,6 +12,16 @@ package org.sample.presentation;
  * @author jam.hsu
  *
  */
-public class JsonModel {
+public class JsonModel<M> {
+	
+	private M data;
 
+	public M getData() {
+		return data;
+	}
+
+	public void setData(M data) {
+		this.data = data;
+	}
+	
 }

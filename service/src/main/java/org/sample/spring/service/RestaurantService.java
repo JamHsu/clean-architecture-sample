@@ -1,6 +1,7 @@
 package org.sample.spring.service;
 
-import org.sample.presentation.restaurant.create.CreateRestaurantPresenter;
+import org.sample.presentation.restaurant.list.ListRestaurantPresenter;
+//import org.sample.presentation.restaurant.create.CreateRestaurantPresenter;
 import org.sample.repositories.RestaurantRepositoryImp;
 import org.sample.usecases.restaurant.create.CreateRestaurantImp;
 import org.sample.usecases.restaurant.create.contracts.CreateRestaurant;
@@ -24,13 +25,13 @@ public class RestaurantService {
 		this.createRestaurant.setRestaurantRepository(new RestaurantRepositoryImp());
 	}
 	
-	public void listRestaurant(ListRestaurantResponse response) {
+	public void listRestaurant(ListRestaurantPresenter presenter) {
 		ListRestaurantRequest request = new ListRestaurantRequest();
-		listRestaurant.execute(request, response);
+		listRestaurant.execute(request, presenter);
 	}
 	
-	public void createRestaurant(CreateRestaurantRequest request, CreateRestaurantPresenter presenter) {
-	    createRestaurant.execute(request, presenter);
-	}
+//	public void createRestaurant(CreateRestaurantRequest request, CreateRestaurantPresenter presenter) {
+//	    createRestaurant.execute(request, presenter);
+//	}
 	
 }
