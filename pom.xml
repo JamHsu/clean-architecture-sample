@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
-    		<module>entities</module>
+    	<module>entities</module>
         <module>common</module>
         <module>use-cases</module> 
         <module>service</module>

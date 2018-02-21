@@ -1,9 +1,9 @@
 package org.sample.spring.service;
 
-import org.sample.usecases.list.restaurant.ListRestaurantImp;
-import org.sample.usecases.list.restaurant.contracts.ListRestaurant;
-import org.sample.usecases.list.restaurant.contracts.ListRestaurantRequest;
-import org.sample.usecases.list.restaurant.contracts.ListRestaurantResponse;
+import org.sample.usecases.restaurant.list.ListRestaurantImp;
+import org.sample.usecases.restaurant.list.contracts.ListRestaurant;
+import org.sample.usecases.restaurant.list.contracts.ListRestaurantRequest;
+import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponse;
 
 public class RestaurantService {
 	

@@ -30,7 +30,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.com.sample</groupId>
+            <groupId>org.com.sample.service</groupId>
             <artifactId>clean-architecture-service</artifactId>
             <version>${project.version}</version>
         </dependency>
