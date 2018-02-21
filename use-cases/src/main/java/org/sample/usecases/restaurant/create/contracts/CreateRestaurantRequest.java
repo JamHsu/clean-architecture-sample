@@ -1,6 +1,6 @@
 package org.sample.usecases.restaurant.create.contracts;
 
-import org.sample.contracts.usecase.Request;
+import org.sample.usecase.contracts.Request;
 
 public class CreateRestaurantRequest implements Request {
 

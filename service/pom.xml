@@ -35,6 +35,11 @@
             <artifactId>jam-clean-architecture-usecase</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.com.sample.presentation</groupId>
+            <artifactId>jam-clean-architecture-presentation</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 	</dependencies>
 
 </project>
