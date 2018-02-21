@@ -50,7 +50,7 @@ public class RestaurantRepositoryImp implements RestaurantRepository {
         
         String r2UUid = UUID.randomUUID().toString();
         Restaurant r2 = new Restaurant();
-        r2.setId(r1UUid);
+        r2.setId(r2UUid);
         r2.setName("CBX_TW");
         Address a2 = new Address();
         a2.setRestaurantId(r1UUid);
