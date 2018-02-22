@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.sample.entities.restaurant.Restaurant;
@@ -32,9 +31,6 @@ import org.sample.usecases.restaurant.list.contracts.ListRestaurantResponseModel
  */
 @RunWith(MockitoJUnitRunner.class)
 class ListRestaurantImpTest {
-    
-//    @Mock
-//    private RestaurantRepository repository;
 
     @Test
     void testExecute() {

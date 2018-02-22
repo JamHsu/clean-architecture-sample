@@ -8,9 +8,13 @@
 
 package org.sample.spring.controller;
 
+import org.sample.presentation.restaurant.create.CreateRestaurantPresenter;
 import org.sample.presentation.restaurant.list.ListRestaurantPresenter;
 import org.sample.spring.service.RestaurantService;
+import org.sample.usecases.restaurant.create.contracts.CreateRestaurantRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -27,9 +31,17 @@ public class RestaurantController {
     }
     
     @GetMapping("/")
-    public String home() {
+    public String listRestaurant() {
         ListRestaurantPresenter presenter = new ListRestaurantPresenter();
         service.listRestaurant(presenter);
+        return presenter.createView().exportJson();
+    }
+    
+    @PostMapping("/")
+    public String createRestaurant(@RequestBody CreateRestaurantRequest restaurant) {
+        CreateRestaurantPresenter presenter = new CreateRestaurantPresenter();
+        CreateRestaurantRequest request = new CreateRestaurantRequest();
+        service.createRestaurant(request, presenter);
         return presenter.createView().exportJson();
     }
 
