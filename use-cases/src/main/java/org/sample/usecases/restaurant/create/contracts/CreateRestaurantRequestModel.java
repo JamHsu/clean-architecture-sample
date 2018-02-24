@@ -6,7 +6,8 @@ public interface CreateRestaurantRequestModel {
         String zone;
         String city;
         String address;
-
+        
+        public Address() {}
         public Address(String zone, String city, String address) {
             this.zone = zone;
             this.city = city;
@@ -29,7 +30,8 @@ public interface CreateRestaurantRequestModel {
     class ContactInfo {
         String phoneNumber;
         String email;
-
+        
+        public ContactInfo() {}
         public ContactInfo(String phoneNumber, String email) {
             this.phoneNumber = phoneNumber;
             this.email = email;

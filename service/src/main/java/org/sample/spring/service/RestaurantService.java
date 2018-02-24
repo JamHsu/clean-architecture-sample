@@ -19,9 +19,9 @@ public class RestaurantService {
 	
 	public RestaurantService() {
 		this.listRestaurant = new ListRestaurantImp();
-		this.listRestaurant.setRestaurantRepository(new RestaurantRepositoryImp());
+		this.listRestaurant.setRestaurantRepository(RestaurantRepositoryImp.getInstance());
 		this.createRestaurant = new CreateRestaurantImp();
-		this.createRestaurant.setRestaurantRepository(new RestaurantRepositoryImp());
+		this.createRestaurant.setRestaurantRepository(RestaurantRepositoryImp.getInstance());
 	}
 	
 	public void listRestaurant(ListRestaurantPresenter presenter) {

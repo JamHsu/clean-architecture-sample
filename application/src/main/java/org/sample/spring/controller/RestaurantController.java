@@ -30,17 +30,16 @@ public class RestaurantController {
         this.service = service;
     }
     
-    @GetMapping("/")
+    @GetMapping(path = "/", produces = "application/json")
     public String listRestaurant() {
         ListRestaurantPresenter presenter = new ListRestaurantPresenter();
         service.listRestaurant(presenter);
         return presenter.createView().exportJson();
     }
     
-    @PostMapping("/")
-    public String createRestaurant(@RequestBody CreateRestaurantRequest restaurant) {
+    @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
+    public String createRestaurant(@RequestBody CreateRestaurantRequest request) {
         CreateRestaurantPresenter presenter = new CreateRestaurantPresenter();
-        CreateRestaurantRequest request = new CreateRestaurantRequest();
         service.createRestaurant(request, presenter);
         return presenter.createView().exportJson();
     }

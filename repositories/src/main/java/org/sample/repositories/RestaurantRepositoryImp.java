@@ -26,9 +26,17 @@ import org.sample.repositories.restaurant.contracts.RestaurantRepository;
 public class RestaurantRepositoryImp implements RestaurantRepository {
     
     private Map<String, Restaurant> restaurantData = new HashMap<String, Restaurant>();
+    
+    private RestaurantRepositoryImp() {
+    		initData();
+    }
 
-    public RestaurantRepositoryImp() {
-        initData();
+    private static class LazyHolder {
+        static final RestaurantRepositoryImp INSTANCE = new RestaurantRepositoryImp();
+    }
+
+    public static RestaurantRepositoryImp getInstance() {
+        return LazyHolder.INSTANCE;
     }
     
     private void initData() {
